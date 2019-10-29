@@ -1,20 +1,2 @@
 Data associated with the paper Carmen et al. 2019
 
-What is iGSEA:
-To study the broad functional interactome related to chaperome members, we designed iGSEA (interactome gene-set enrichment analysis) that takes both PPI (Protein-Protein Interaction) information and Pathway enrichment analysis into consideration. Instead of performing classical GSEA within a predefined gene set, our method applies GSEA within each local interactome (a group of interactors) of a given chaperome member and summarizes the most prominent biological functions extended (through PPI) from with the chaperome member, thereby an additional layer of annotations can be attributed to the chaperome member from the Gene Ontology (GO) terms (or possibly from other annotation databases) of its direct interactors. To differentiate the imbalanced biological processes, test for each chaperome member is splitted into two distinct pools containing either up- or down-regulated proteins as pre-defined by the DE analysis (by setting up the p.value cutoff or/and fold change cutoff). GO enrichment analysis was performed by R packages “clusterProfiler” https://bioconductor.org/packages/release/bioc/html/clusterProfiler.html. P-values (derived from Fisher’s exact test) were adjusted by the method of Benjamini Hochberg (FDR). 
-
-Data visualization (wire-plot):
-For data visualization, data with adjusted p-value < 0.1 were imported in Cystoscape v3.61 (https://cytoscape.org) using the columns “Chaperome_ID” (Protein identifier of Chaperome member) and “Description” (GO terms) as interactor A and B. Associated data (p-values, GeneRatio, BgRatio, qvalue and adjusted p-values) were imported as edge attributes. The edge was colored in blue if the Chaperome-GO association is enriched (GSEA adjusted p-value<0.1) in down-regulation gene set, or in red if enriched in up-regulated gene set (GSEA adjusted p-value<0.1). To generate the layout, Hierarchical layout (yFiles) was applied with removal of all edge bends. Unconnected GO terms were also removed.  Optionally, GO terms can be drawn in yellow squares and chaperome members can be drawn in circles with the node color representing the fold changes in raw intensity (Raw.FC). 
-
-Script 1: 1-preparing_libraries.R prepares the libraireis necessary for running iGSEA, which include the UniProt database, pre-defined chaperome member list (from Breheme M. et al, Cell Rep, 2014 (PUBMED: 25437566), Table S2 (1-s2.0-S2211124714008250-mmc3.xls)). The version of the database were annotated in the script.
-Script 2: 2-preparing-PPI_2018_0508.R prepares the Protein-Protein interaction (PPI) database originated from BioGrid and IntAct. The version and the download date were specificies in the script.
-Script 3: 3-iGSEA.R runs the iGSEA, the last part of the code (SynGO) includes a section to extract only SynGO related GO terms from the full iGSEA results into (This subset was shown in the main figure of the paper). The description of SynGO was included in the script.
-
-R package dependencies: UniProt.ws (v2.24.2), plyr (v1.84), splitstackshape (v1.48), clusterProflier (v3.12.0), org.Hs.eg.db (v3.8.2),
-
-Output files (librarires) from Script 1-2 were included in the "library" folder. One could run independently the Script 3 (iGSEA) without running the Script 1-2
-The raw iGSEA output were included in the "output" folder (R data file)
-
-The scripts were tested with R 3.6.1 under OS X 10.13.6 on an iMac (Late 2015). Approximate running time is 1-4 hours depending on the configuration of the computer.
-
-
