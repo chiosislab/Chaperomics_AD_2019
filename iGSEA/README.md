@@ -8,7 +8,7 @@ Script 1: 1-preparing_libraries.R prepares the libraireis necessary for running 
 Script 2: 2-preparing-PPI_2018_0508.R prepares the Protein-Protein interaction (PPI) database originated from BioGrid and IntAct. The version and the download date were specified in the script.
 Script 3: 3-iGSEA.R runs the iGSEA, the last part of the code (SynGO) includes a section to extract only SynGO related GO terms from the full iGSEA results (This subset was shown in the main figure of the paper). The description of SynGO was included in the script.
 
-R package dependencies: UniProt.ws (v2.24.2), plyr (v1.84), splitstackshape (v1.48), clusterProflier (v3.12.0), org.Hs.eg.db (v3.8.2),
+R package dependencies: UniProt.ws (v2.24.2), plyr (v1.84), splitstackshape (v1.48), clusterProflier (v3.12.0), org.Hs.eg.db (v3.8.2)
 
 Output files (librarires) from Script 1-2 were included in the "library" folder. One could run independently the Script 3 (iGSEA) without running the Script 1-2.
 The raw iGSEA output were included in the "output" folder (R data file)
