@@ -10,7 +10,7 @@ Script 3: 3-iGSEA.R runs the iGSEA, the last part of the code (SynGO) includes a
 
 R package dependencies: UniProt.ws (v2.24.2), plyr (v1.84), splitstackshape (v1.48), clusterProflier (v3.12.0), org.Hs.eg.db (v3.8.2),
 
-Output files (librarires) from Script 1-2 were included in the "library" folder. One could run independently the Script 3 (iGSEA) without running the Script 1-2
+Output files (librarires) from Script 1-2 were included in the "library" folder. One could run independently the Script 3 (iGSEA) without running the Script 1-2.
 The raw iGSEA output were included in the "output" folder (R data file)
 
 The scripts were tested with R 3.6.1 under OS X 10.13.6 on an iMac (Late 2015). Approximate running time is 1-4 hours depending on the configuration of the computer.
